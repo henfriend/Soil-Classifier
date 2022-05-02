@@ -1,7 +1,9 @@
 import java.util.*;
 import java.io.*;
 
+// class containing methods to determine whether or not soil can drain water
 public class SoilTest {
+   // returns true if file can drain water and false otherwise
    public static boolean drains(String f) throws FileNotFoundException {
       File file = new File(f);
       Scanner fileScan = new Scanner(file);
@@ -22,6 +24,7 @@ public class SoilTest {
          depth++;
       }
 
+      // store width * depth into variable size
       int size = width * depth;
       WeightedQuickUnionPC uf = new WeightedQuickUnionPC(size);
 
@@ -86,7 +89,8 @@ public class SoilTest {
       }
       return false;
    }
-   
+
+   // main method
    public static void main(String[] args) throws FileNotFoundException {
       Scanner input = new Scanner(System.in);
       System.out.print("Type a file name(q to quit): ");
